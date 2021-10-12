@@ -16,17 +16,17 @@ router.get('/api/workouts', (req, res) => {
       res.json(workoutData);
     })
     .catch((error) => {
-      res.json(error);
+      res.json(error)
     })
 })
 
 router.post('/api/workouts', (req, res) => {
   Workout.create({})
     .then((workout) => {
-      res.json(workout);
+      res.json(workout)
     })
     .catch((err) => {
-      res.json(err);
+      res.json(err)
     })
 })
 
@@ -41,7 +41,7 @@ router.put('/api/workouts/:id', ({ body, params }, res) => {
       res.json(workoutData);
     })
     .catch((err) => {
-      res.json(err);
+      res.json(err)
     })
 })
 
@@ -55,9 +55,9 @@ router.get("/api/workouts/range", (req, res) => {
      console.log(workout[i])
    }
 
-    res.json(workouts);
+    res.json(workouts)
   }).catch(err => {
-    res.json(err);
+    res.json(err)
   })
 
 })
@@ -65,11 +65,11 @@ router.get("/api/workouts/range", (req, res) => {
 router.delete('/api/workouts', ({ body }, res) => {
   Workout.findByUpIdAndDelete(body.id)
     .then(() => {
-      res.json(true);
+      res.json(true)
     })
     .catch((error) => {
-      res.json(error);
+      res.json(error)
     })
 })
 
-module.exports = router;
+module.exports = router
