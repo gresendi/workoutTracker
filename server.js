@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workout', {
 
 app.use(require('./routes/api.js'))
 app.use(require('./routes/views.js'))
-
+//run
 app.listen(3000, () => {
   console.log(`running`)
 })
