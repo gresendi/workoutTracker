@@ -1,23 +1,16 @@
+require('dotenv').config()
+const { join } = require('path')
 const express = require('express')
-const logger = require('morgan')
-const mongoose = require('mongoose')
+const syncDB = require('./db')
 const app = express()
 
-app.use(logger('dev'))
 
+app.use(express.static(join(__dirname, 'public')))
 app.use(express.urlencoded({extended: true}))
-app.use(express.static('public'))
 app.use(express.json())
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/workout', {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true
-});
-
-app.use(require('./routes/api.js'))
-app.use(require('./routes/views.js'))
+app.use(require('./routes'))
 //run
-app.listen(3000, () => {
-  console.log(`running`)
-})
+syncDB()
+  .then(() => app.listen(process.env.PORT || 3000))
+  .catch(err => console.log(err))
