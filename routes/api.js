@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const Workout = require('../models/workout.js');
+const Workout = require('../models/Workout.js');
 
 
 router.get('/api/workouts', (req, res) => {
@@ -47,9 +47,9 @@ router.put('/api/workouts/:id', ({ body, params }, res) => {
 
 
 router.get("/api/workouts/range", (req, res) => {
-
+  let workouts = []
   Workout.find({}).sort({ x: -1 }).then(workout => {
-    let workouts = []
+    
    for(let i = 0; i <7;i++){
      workouts.push(workout[i])
      console.log(workout[i])
