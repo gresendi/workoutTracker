@@ -1,10 +1,10 @@
-# Fitness Tracker - Yet another fitness tracker
+# Fitness Tracker 
 
 
 For this assignment, the app is a fitness tracker.  The fitness tracker allows the user to create a workout where they enter various exercises associated to the workout.  The data can then be analyzed with an included stats page that provides insights into the details of all their workouts.  In this homework assignment, the challenge is to connect the included frontend with a backend that is to be built using MongoDB, Mongoose and Express.
 
 ## Table of Contents
-- [Fitness Tracker - Yet another fitness tracker](#fitness-tracker---yet-another-fitness-tracker)
+- [Fitness Tracker - Yet another fitness tracker](#fitness-tracker)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Usage](#usage)
