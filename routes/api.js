@@ -38,7 +38,7 @@ router.put('/api/workouts/:id', ({ body, params }, res) => {
     { new: true, runValidators: true }
   )
     .then((workoutData) => {
-      res.json(workoutData);
+      res.json(workoutData)
     })
     .catch((err) => {
       res.json(err)
